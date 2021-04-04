@@ -1,0 +1,228 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: inherit;
+    font-family: "Lato", sans-serif;
+}
+
+button:focus{
+    outline: none;
+}
+
+.section-home{
+    height: 100vh;
+    background-image: linear-gradient(to right,rgba(255,0,0,0.5),rgba(255,69,0,0.5)) ,url(../img/morning.jpg);
+    padding: 10rem;
+    position: relative;
+}
+
+.heading-primary{
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.list{
+    background-color: #fff;
+    display: inline-block;
+    width: 30vw;
+    height: 48vh;
+    overflow-y: auto;
+    font-size: 1.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.5);
+}
+
+.list::-webkit-scrollbar{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.list::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.list::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+
+.list-item-box{
+    padding: 1rem;
+    margin: 2rem 0.5rem;
+    position: relative;
+}
+
+.list-item-heading{
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.heading-secondary{
+    text-align: center;
+    background-image: linear-gradient(to right,rgba(255,0,0,0.8),rgba(255,69,0,0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.task-info{
+    background-color: #fff;
+    display: inline-block;
+    width: 25vw;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    position: absolute;
+    top: 75.4%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.5);
+    backface-visibility: hidden;
+}
+
+.btn-radio{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.list-item-box:last-child{
+    margin-bottom: 1rem;
+}
+
+.list-item-box{
+    
+    border-bottom: 1px solid #eee;
+}
+
+.list-item{
+    list-style: none;
+    display: inline-block;
+    margin-left: 6rem;
+}
+
+.input-box{
+    background-color: #fff;
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30vw;
+    padding: 1rem;
+    border-radius: 5px;
+    display: table;
+    text-align: center;
+}
+
+.input-add{
+    width: 85%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    outline: none;
+    border: transparent;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn-add{
+    font-size: 5rem;
+    margin-left: 1rem;
+    display: table-cell;
+    vertical-align: middle;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    /* color: #393e46; */
+    background-image: linear-gradient(to right,rgba(255,0,0,0.8),rgba(255,69,0,0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-add:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.btn-check{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 2px solid #393e46;
+    display: inline-block;
+    position: absolute;
+    left: 2rem;
+    top: 0;
+}
+
+
+.btn-radio:checked ~ .btn-label > .btn-check{
+    background-image: linear-gradient(to right,rgba(255,0,0,0.8),rgba(255,69,0,0.8));
+}
+
+.btn-check:hover{
+    background-color: #eee;
+    transform: scale(1.1);
+}
+
+.btn-check::after{
+    content: "";
+    display: none;
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    height: 1rem;
+    width: 0.5rem;
+    border: 2px solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.btn-radio:checked ~ .btn-label > .btn-check::after{
+    display: block;
+}
+
+
+.completed{
+    background-image: linear-gradient(to right,rgba(255,0,0,0.8),rgba(255,69,0,0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.items-left{
+    display: inline-block;
+    margin-top: 2.5rem;
+    color: #4a4a48;
+    padding: .5rem;
+    border-bottom: 2px solid rgba(255,45,0,.8);
+}

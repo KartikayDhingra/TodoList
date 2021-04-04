@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List App</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/android-chrome-512x512.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <main>
+        <section class="section-home">
+            <div class="heading-primary">
+                <h1>Good Morning!</h1>
+            </div>
+            <div class="list">
+                
+                <div class="list-item-heading">
+                    <div>
+                        <h2 class="heading-secondary"></h2>
+                    </div>
+                    <div class="items-left">&nbsp;</div>
+        
+                </div>
+
+                <% for(let i=0 ;i<newTask.length ;i++){ %>
+
+                    <form action="/delete" method="post">
+                        <div class="list-item-box task-list">
+                            <input type="checkbox" class="btn-radio" name="checkbox" onchange="this.form.submit()" value=<%= newTask[i]._id %> id="item<%= i %>" >
+                            <label for="item<%= i %>" class="btn-label">
+                                <span class="btn-check"></span>
+                            </label>
+                            <li class="list-item"><%= newTask[i].name %></li>
+                        </div>
+                    </form>
+
+                <% } %>
+
+            </div>
+
+
+
+            <form action="/" method="POST">
+                <div class="input-box">
+                    <input type="text" name="task" id="" placeholder="Add a new list..."  class="input-add" autocomplete="off">
+                    <button type="submit" name="button" class="btn-add">+</button>
+                </div>
+            </form>
+    
+        </section>
+    </main>
+
+
+    <script src="client/client.js"></script>
+</body>
+</html>
