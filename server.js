@@ -3,6 +3,11 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -91,7 +96,7 @@ app.post("/delete", (req,res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server running at port 3000");
     
 });
